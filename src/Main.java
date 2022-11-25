@@ -30,15 +30,14 @@ public class Main {
         //   System.out.println(soldier);
 
         // фамилии список потенциально работоспособных людей с высшим образованием
-       List<Person>workers = persons.stream()
+        List<Person> workers = persons.stream()
                 .filter(person -> person.getAge() >= 18)
                 .filter(person -> person.getEducation() == Education.HIGHER)
-                .filter(person -> person.getSex() == Sex.MAN && person.getAge() <= 65||
-                        person.getSex() == Sex.WOMAN && person.getAge()<=60)
+                .filter(person -> person.getSex() == Sex.MAN && person.getAge() <= 65 ||
+                        person.getSex() == Sex.WOMAN && person.getAge() <= 60)
                 .sorted(Comparator.comparing(Person::getFamily))
                 .collect(Collectors.toList());
-       System.out.println(workers);
-
+        System.out.println(workers);
 
 
     }
